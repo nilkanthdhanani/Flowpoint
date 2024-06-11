@@ -1,0 +1,116 @@
+@import "../../styles/mixin/mixin";
+@import "../../styles/typography/typography";
+
+.footer-div {
+    padding: 80px 0 40px;
+    border-top: 1px solid var(--border-marquee);
+
+    .footer-logo {
+        padding: 13px;
+        max-width: 170px;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    .footer-flex {
+        @include space-between;
+        align-items: flex-start;
+
+        .footer-flex1 {
+            h2 {
+                @include font14;
+                font-weight: 500;
+                color: var(--font-black-header);
+            }
+
+            .footer-flex1-icon {
+                padding-top: 40px;
+                @include flex;
+
+                .footer-flex1-icon-box {
+                    padding: 8px;
+                    margin: 0 4px;
+                    border-radius: 50%;
+                    position: relative;
+                    @include flex-center;
+                    transition: 0.3s ease-in-out;
+                    cursor: pointer;
+
+                    img {
+                        width: 20px;
+                    }
+
+                    .icon-ticket {
+                        opacity: 0;
+                        visibility: hidden;
+                        position: absolute;
+                        top: -50px;
+                        padding: 8px;
+                        background-color: var(--color-black);
+                        color: var(--color-white);
+                        @include font11;
+                        border-radius: 5px;
+                        transition:
+                            opacity 0.3s ease-in-out,
+                            visibility 0.3s ease-in-out;
+                    }
+
+                    &:hover {
+                        background: var(--icon-hover2);
+                        transition: 0.3s ease-in-out;
+
+                        .icon-ticket {
+                            opacity: 1;
+                            visibility: visible;
+                        }
+                    }
+                }
+            }
+        }
+
+        .footer-flex2 {
+            h3 {
+                @include font12;
+                color: var(--font-black-header);
+            }
+            a {
+                display: block;
+                @include font12in;
+                color: var(--font-black3);
+                font-weight: 400;
+                line-height: 1.5;
+                margin-top: 16px;
+
+                &:hover {
+                    text-decoration-line: underline;
+                }
+            }
+        }
+
+        .footer-flex3 {
+            h3 {
+                @include font12;
+                color: var(--font-black-header);
+            }
+
+            p {
+                display: block;
+                @include font14;
+                color: var(--font-black3);
+                font-weight: 500;
+                margin-top: 16px;
+            }
+        }
+    }
+
+    .footer-copyright {
+        margin-top: 80px;
+
+        p {
+            @include font13;
+            color: var(--font-black-header);
+        }
+    }
+}

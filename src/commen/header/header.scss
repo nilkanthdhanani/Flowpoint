@@ -1,0 +1,165 @@
+@import "../../styles/mixin/mixin";
+@import "../../styles/typography/typography";
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    transition:
+        background-color 0.5s ease,
+        border 0.5s ease;
+    z-index: 10;
+
+    &.scrolled {
+        .header-first {
+            margin-bottom: 12px;
+            transition: margin-bottom 0.5s ease;
+        }
+
+        .header-main {
+            .header-main-div {
+                background-color: var(--bgcolor-header);
+                border: 1px solid var(--border-gray-header);
+            }
+        }
+    }
+
+    &.scrolled-300 {
+        .header-main {
+            .header-main-div {
+                background-color: rgba(255, 255, 255, 0.8);
+                backdrop-filter: blur(6px);
+                transition:
+                    background-color 0.5s ease,
+                    backdrop-filter 0.3s ease;
+
+                .hmg-flex2 {
+                    .hmg-flex2-ancer {
+                        .hmg-flex2-list {
+                            color: var(--font-black-header);
+
+                            a {
+                                color: var(--font-black-header);
+                                transition: color 0.5s ease;
+                            }
+
+                            &:hover {
+                                color: var(--color-black-dull);
+                                transition: color 0.3s ease-in-out;
+                                a {
+                                    color: var(--color-black-dull);
+                                }
+                            }
+                        }
+                    }
+                    .hmg-flex2-button {
+                        button {
+                            color: var(--font-black-button);
+                            border: 1px solid var(--font-black-button);
+                            background: transparent;
+                            transition:
+                                color 0.5s ease,
+                                border 0.5s ease,
+                                background-color 0.5s ease;
+
+                            &:hover {
+                                border: 1px solid var(--color-white);
+                                color: var(--color-white);
+                                background-color: var(--button-green);
+                                transform: scale(1);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .header-first {
+        background-color: var(--bgcolor-header-first);
+        width: 100%;
+        min-height: 45px;
+        @include flex-center;
+        transition: background-color 0.5s ease;
+
+        span {
+            padding: 2px 7px;
+            margin-right: 8px;
+        }
+
+        a {
+            padding: 8px 0px;
+            @include font16;
+            color: var(--font-black-light);
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    .header-main {
+        margin-top: 3px;
+
+        .header-main-div {
+            width: 100%;
+            padding: 10px;
+            border-radius: 10px;
+            background: transparent;
+            box-shadow: none;
+            transition:
+                padding 0.5s ease,
+                border-radius 0.5s ease,
+                box-shadow 0.5s ease;
+
+            .hmg-flex {
+                @include space-between;
+                padding: 6px 0;
+
+                .hmg-flex-logo {
+                    padding: 0 13px;
+
+                    img {
+                        max-width: 144px;
+                        transition: max-width 0.5s ease;
+                    }
+                }
+            }
+
+            .hmg-flex2 {
+                @include flex;
+
+                .hmg-flex2-ancer {
+                    @include flex;
+
+                    .hmg-flex2-list {
+                        @include flex;
+                        gap: 4px;
+                        margin-right: 40px;
+                        @include font14in;
+                        color: var(--color-white);
+                        transition: color 0.5s ease;
+
+                        a {
+                            color: var(--color-white);
+                            transition: color 0.5s ease;
+                        }
+
+                        .drop-down {
+                            font-size: 16px;
+                        }
+
+                        &:hover {
+                            color: var(--color-white-dull);
+                            transition: color 0.5s ease;
+                            a {
+                                color: var(--color-white-dull);
+                                transition: color 0.5s ease;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

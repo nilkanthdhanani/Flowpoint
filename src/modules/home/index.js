@@ -16,7 +16,10 @@ import discover1 from '../../assets/images/svg/discover1.svg';
 import discover2 from '../../assets/images/svg/discover2.svg';
 import discover3 from '../../assets/images/svg/discover3.svg';
 import discover4 from '../../assets/images/svg/discover4.svg';
-import discoverImg from '../../assets/images/webp/discoverImg.webp';
+import discoverImg1 from '../../assets/images/webp/discoverImg1.webp';
+import discoverImg2 from '../../assets/images/webp/discoverImg2.webp';
+import discoverImg3 from '../../assets/images/webp/discoverImg3.webp';
+import discoverImg4 from '../../assets/images/webp/discoverImg4.webp';
 import greenUP from '../../assets/images/svg/greenUP.svg';
 import person from '../../assets/images/svg/person.svg';
 import robot from '../../assets/images/svg/robot.svg';
@@ -44,6 +47,27 @@ export default function Home() {
 
   const handleRemoveBlurLayer = () => {
     setIsBlurLayerVisible(false);
+  };
+
+  const [activeContent, setActiveContent] = useState('content1');
+
+  const content = {
+    content1: {
+      text: "See a bird's-eye view of your entire website traffic and identify the most common user journeys.",
+      img: discoverImg1,
+    },
+    content2: {
+      text: "See a comprehensive overview of your visitors' activities and quickly identify their pain points on a large scale within just a few minutes.",
+      img: discoverImg2,
+    },
+    content3: {
+      text: "Prioritize the most impactful areas for conversion rate optimization to efficiently allocate resources and boost results.",
+      img: discoverImg3,
+    },
+    content4: {
+      text: "Easily measure the return on investment and make data-driven decisions that grow your business.",
+      img: discoverImg4,
+    },
   };
 
   return (
@@ -355,10 +379,49 @@ export default function Home() {
             <div className="discover-grid-div2">
               <div className="dgd2-content">
                 <div className="dgd2-content-img">
-                  <img src={discoverImg} alt="discoverImg" />
+                  <img src={discoverImg1} alt="discoverImg1" />
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="discover-respo">
+        <div className="discover-respo-head">
+          <span>DISCOVER</span>
+          <h2>Understand Users, Improve Conversions</h2>
+        </div>
+        <div className="discover-respo-div">
+          <div className="drd-button">
+            <button
+              className={activeContent === 'content1' ? 'active' : ''}
+              onClick={() => setActiveContent('content1')}
+            >
+              Where Do Visitors Go?
+            </button>
+            <button
+              className={activeContent === 'content2' ? 'active' : ''}
+              onClick={() => setActiveContent('content2')}
+            >
+              Identifying issues at scale?
+            </button>
+            <button
+              className={activeContent === 'content3' ? 'active' : ''}
+              onClick={() => setActiveContent('content3')}
+            >
+              What issues are impactful?
+            </button>
+            <button
+              className={activeContent === 'content4' ? 'active' : ''}
+              onClick={() => setActiveContent('content4')}
+            >
+              What is the ROI?
+            </button>
+          </div>
+          <div className="drd-content">
+            <p>{content[activeContent].text}</p>
+            <img src={content[activeContent].img} alt="discoverImg" />
           </div>
         </div>
       </div>
@@ -491,10 +554,6 @@ export default function Home() {
       <div className="rating">
         <div className="container4">
           <div className="rating-flex">
-            <div className="read-more">
-              <a target='blank' href="https://www.capterra.com/p/282505/Flowpoint/reviews/">Read more testimonials</a>
-              <img src={readmore} alt="readmore" />
-            </div>
             <div className="rating-flex1">
               <div className="rating-flex1-text">
                 <span>TESTIMONIALS</span>
@@ -508,6 +567,10 @@ export default function Home() {
                   <img src={ratingImg3} alt="ratingImg3" />
                 </div>
               </div>
+            </div>
+            <div className="read-more">
+              <a target='blank' href="https://www.capterra.com/p/282505/Flowpoint/reviews/">Read more testimonials</a>
+              <img src={readmore} alt="readmore" />
             </div>
             <div className="rating-flex2">
               <div className="rating-flex2-div1">

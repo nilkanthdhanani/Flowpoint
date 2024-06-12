@@ -101,6 +101,12 @@ header {
     .header-main {
         margin-top: 3px;
 
+        @media (max-width: 576px) {
+            .container {
+                padding: 0 10px;
+            }
+        }
+
         .header-main-div {
             width: 100%;
             padding: 10px;
@@ -124,41 +130,109 @@ header {
                         transition: max-width 0.5s ease;
                     }
                 }
-            }
 
-            .hmg-flex2 {
-                @include flex;
-
-                .hmg-flex2-ancer {
+                .hmg-flex2 {
                     @include flex;
 
-                    .hmg-flex2-list {
-                        @include flex;
-                        gap: 4px;
-                        margin-right: 40px;
-                        @include font14in;
-                        color: var(--color-white);
-                        transition: color 0.5s ease;
+                    @media (max-width: 1024px) {
+                        display: none;
+                    }
 
-                        a {
+                    .hmg-flex2-ancer {
+                        @include flex;
+
+                        .hmg-flex2-list {
+                            @include flex;
+                            gap: 4px;
+                            margin-right: 40px;
+                            @include font14in;
                             color: var(--color-white);
                             transition: color 0.5s ease;
-                        }
 
-                        .drop-down {
-                            font-size: 16px;
-                        }
-
-                        &:hover {
-                            color: var(--color-white-dull);
-                            transition: color 0.5s ease;
                             a {
+                                color: var(--color-white);
+                                transition: color 0.5s ease;
+                            }
+
+                            .drop-down {
+                                font-size: 16px;
+                            }
+
+                            &:hover {
                                 color: var(--color-white-dull);
                                 transition: color 0.5s ease;
+                                a {
+                                    color: var(--color-white-dull);
+                                    transition: color 0.5s ease;
+                                }
                             }
                         }
                     }
                 }
+
+                .hmg-flex-sidebar {
+                    display: none;
+
+                    @media (max-width: 1024px) {
+                        display: block;
+                        border-radius: 50%;
+                        padding: 8px;
+                        transition: 0.3s ease-in-out;
+                        cursor: pointer;
+
+                        img {
+                            width: 24px;
+                        }
+
+                        &:hover {
+                            transition: 0.3s ease-in-out;
+                            background-color: var(--bgcolor6);
+
+                            img {
+                                transform: scale(1.1);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 260px;
+    height: 100%;
+    background-color: white;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+    z-index: 100;
+    transition: transform 0.3s ease-in-out;
+    transform: translateX(0);
+
+    .sidebar-content {
+        .sidebar-logo {
+            padding: 37px 33px;
+
+            img {
+                max-width: 144px;
+            }
+        }
+
+        .sidebar-div {
+            padding: 13px 16px;
+            cursor: pointer;
+            @include space-between;
+
+            a {
+                @include font14in;
+                color: var(--font-black3);
+                font-weight: 400;
+            }
+
+            &:hover {
+                background: #919eab14;
             }
         }
     }

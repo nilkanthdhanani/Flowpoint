@@ -90,6 +90,13 @@
     font-family: var(--font-family-Poppins);
 }
 
+@mixin font15in {
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1.77rem;
+    font-family: var(--font-family-inter);
+}
+
 @mixin font16 {
     font-size: 16px;
     font-weight: 400;
@@ -102,6 +109,13 @@
     font-weight: 500;
     line-height: 1.5;
     font-family: var(--font-family-inter);
+}
+
+@mixin font18 {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.5;
+    font-family: var(--font-family-Poppins);
 }
 
 @mixin font18in {
@@ -143,6 +157,13 @@
     font-size: 32px;
     font-weight: 500;
     line-height: 1.5;
+    font-family: var(--font-family-Poppins);
+}
+
+@mixin font40 {
+    font-size: 40px;
+    font-weight: 500;
+    line-height: 1.3;
     font-family: var(--font-family-Poppins);
 }
 

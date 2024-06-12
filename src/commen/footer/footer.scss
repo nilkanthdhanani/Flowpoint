@@ -15,19 +15,34 @@
     }
 
     .footer-flex {
-        @include space-between;
-        align-items: flex-start;
+        display: grid;
+        grid-template-columns: 25% 33.33% 25%;
+        justify-content: space-between;
+
+        @media (max-width: 1024px) {
+            grid-template-columns: repeat(1, 1fr);
+            justify-content: center;
+        }
 
         .footer-flex1 {
             h2 {
                 @include font14;
                 font-weight: 500;
                 color: var(--font-black-header);
+
+                @media (max-width: 1024px) {
+                    text-align: center;
+                }
             }
 
             .footer-flex1-icon {
                 padding-top: 40px;
                 @include flex;
+
+                @media (max-width: 1024px) {
+                    padding: 40px 0;
+                    justify-content: center;
+                }
 
                 .footer-flex1-icon-box {
                     padding: 8px;
@@ -71,25 +86,51 @@
         }
 
         .footer-flex2 {
-            h3 {
-                @include font12;
-                color: var(--font-black-header);
-            }
-            a {
-                display: block;
-                @include font12in;
-                color: var(--font-black3);
-                font-weight: 400;
-                line-height: 1.5;
-                margin-top: 16px;
+            display: flex;
+            justify-content: space-between;
 
-                &:hover {
-                    text-decoration-line: underline;
+            @media (max-width: 1024px) {
+                display: block;
+            }
+
+            .footer-flex2-box {
+
+                @media (max-width: 1024px) {
+                    text-align: center;
+                }
+                h3 {
+                    @include font12;
+                    color: var(--font-black-header);
+                }
+                a {
+                    display: block;
+                    @include font12in;
+                    color: var(--font-black3);
+                    font-weight: 400;
+                    line-height: 1.5;
+                    margin-top: 16px;
+
+                    &:hover {
+                        text-decoration-line: underline;
+                    }
+                }
+
+                &:last-child {
+                    margin-left: 40px;
+
+                    @media (max-width: 1024px) {
+                        margin: 40px 0;
+                    }
                 }
             }
         }
 
         .footer-flex3 {
+
+            @media (max-width: 1024px) {
+                text-align: center;
+            }
+            
             h3 {
                 @include font12;
                 color: var(--font-black-header);
@@ -107,6 +148,10 @@
 
     .footer-copyright {
         margin-top: 80px;
+
+        @media (max-width: 1024px) {
+            text-align: center;
+        }
 
         p {
             @include font13;

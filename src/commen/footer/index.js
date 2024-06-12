@@ -48,19 +48,21 @@ export default function Footer() {
               </div>
             </div>
             <div className="footer-flex2">
-              <h3>RESOURCES</h3>
-              <a href="Documentation">Documentation</a>
-              <a href="Blog">Blog</a>
-              <a href="FAQs">FAQs</a>
-              <a href="GDPR Statement">GDPR Statement</a> 
-            </div>
-            <div className="footer-flex2">
-              <h3>LEGAL</h3>
-              <a href="Privacy Policy">Privacy Policy</a>
-              <a href="Data Protection Agreement">Data Protection Agreement</a>
-              <a href="Cookie Notice">Cookie Notice</a>
-              <a href="Terms of Use">Terms of Use</a>
-              <a href="Manage cookies">Manage cookies</a>
+              <div className="footer-flex2-box">
+                <h3>RESOURCES</h3>
+                <a href="Documentation">Documentation</a>
+                <a href="Blog">Blog</a>
+                <a href="FAQs">FAQs</a>
+                <a href="GDPR Statement">GDPR Statement</a>
+              </div>
+              <div className="footer-flex2-box">
+                <h3>LEGAL</h3>
+                <a href="Privacy Policy">Privacy Policy</a>
+                <a href="Data Protection Agreement">Data Protection Agreement</a>
+                <a href="Cookie Notice">Cookie Notice</a>
+                <a href="Terms of Use">Terms of Use</a>
+                <a href="Manage cookies">Manage cookies</a>
+              </div>
             </div>
             <div className="footer-flex3">
               <h3>CONTACT</h3>

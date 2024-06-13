@@ -187,8 +187,8 @@ export default function Home() {
       <div className="analyze">
         <div className="containerR">
           <div className="analyze-head">
-            <span>GOALS</span>
-            <h2>Analyze, Improve and Grow</h2>
+            <span data-aos="fade-up" data-aos-duration="1000">GOALS</span>
+            <h2 data-aos="fade-down" data-aos-duration="1000">Analyze, Improve and Grow</h2>
           </div>
           <div className="analyze-grid">
             <div className="analyze-grid-box">
@@ -213,7 +213,7 @@ export default function Home() {
       <div className="capture">
         <div className="container">
           <div className="capture-grid">
-            <div className="capture-grid1">
+            <div className="capture-grid1" data-aos="fade-up" data-aos-duration="1000">
               <span>COLLECT</span>
               <h2>Capture user events</h2>
               <p>Flowpoint automatically captures where your users click, scroll, the time spent on different sections and many more.</p>
@@ -429,10 +429,10 @@ export default function Home() {
       <div className="action">
         <div className="container4">
           <div className="action-head">
-            <span>GROW</span>
-            <h2>Turn data into meaningful actions</h2>
+            <span data-aos="fade-up" data-aos-duration="1000">GROW</span>
+            <h2 data-aos="fade-down" data-aos-duration="1000">Turn data into meaningful actions</h2>
           </div>
-          <div className="action-flex">
+          <div className="action-flex" data-aos="fade-up" data-aos-duration="1000">
             <div className="action-flex-box">
               <div className="afb-first">
                 <h4>Content</h4>
@@ -542,7 +542,7 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className="ava-flex2">
+            <div className="ava-flex2" data-aos="fade-up" data-aos-duration="1000">
               <h2>Ava Powered by ChatGPT</h2>
               <p>Stuck in data purgatory? Ava's your AI oracle, ready to decode your Flowpoint insights and guide you to conversion heaven.</p>
               <button>Demo Ava</button>
@@ -575,7 +575,7 @@ export default function Home() {
             <div className="rating-flex2">
               <div className="rating-flex2-div1">
                 <div className="rating-flex2-div1-content">
-                  <div className="rating-flex2-div1-box">
+                  <div className="rating-flex2-div1-box" data-aos="fade-up" data-aos-duration="1000">
                     <h3>Nina</h3>
                     <span>Founder and CEO, Desyr</span>
                     <div className="five-star">
@@ -587,7 +587,7 @@ export default function Home() {
                     </div>
                     <p>It’s helped me to see where users are dropping out along the conversion funnel, so that I can make improvements to the website and increase our overall conversion rate.</p>
                   </div>
-                  <div className="rating-flex2-div1-box">
+                  <div className="rating-flex2-div1-box" data-aos="fade-up" data-aos-duration="1000">
                     <h3>Lucian N.</h3>
                     <span>Technology Strategist, Growth Linked LLC</span>
                     <div className="five-star">
@@ -599,7 +599,7 @@ export default function Home() {
                     </div>
                     <p>A Single Pane Of Glass for collecting, analyzing, and taking decisions for actions to be implemented in order to improve the conversions.Flexibility and responsiveness of the team to implement new features to help capture more insights about user behavior.</p>
                   </div>
-                  <div className="rating-flex2-div1-box">
+                  <div className="rating-flex2-div1-box" data-aos="fade-up" data-aos-duration="1000">
                     <h3>Nina</h3>
                     <span>Founder and CEO, Desyr</span>
                     <div className="five-star">
@@ -616,7 +616,7 @@ export default function Home() {
               <div className="rating-flex2-div2">
                 <div className="rating-flex2-div1">
                   <div className="rating-flex2-div1-content">
-                    <div className="rating-flex2-div1-box">
+                    <div className="rating-flex2-div1-box" data-aos="fade-up" data-aos-duration="1000">
                       <h3>Tori P.</h3>
                       <span>Co-founder, Qube App</span>
                       <div className="five-star">
@@ -628,7 +628,7 @@ export default function Home() {
                       </div>
                       <p>Easy of use. Colors. Insights. The fact that it can show me the bottlenecks in the path to conversion easily. The level of personalization.</p>
                     </div>
-                    <div className="rating-flex2-div1-box">
+                    <div className="rating-flex2-div1-box" data-aos="fade-up" data-aos-duration="1000">
                       <h3>Dhiraj N.</h3>
                       <span>CEO, Opsly Cloud</span>
                       <div className="five-star">
@@ -651,11 +651,11 @@ export default function Home() {
       <div className="resource">
         <div className="container4">
           <div className="resource-head">
-            <div className="resource-head-blog">
+            <div className="resource-head-blog" data-aos="fade-up" data-aos-duration="1000">
               <img src={blog} alt="blog" />
               <span>BLOG</span>
             </div>
-            <h2>Resources for growing your product</h2>
+            <h2 data-aos="fade-down" data-aos-duration="1000">Resources for growing your product</h2>
           </div>
           <div className="resource-grid">
             <div className="resource-grid-box1">
@@ -695,7 +695,7 @@ export default function Home() {
       <div className="analytics">
         <div className="container4">
           <div className="analytics-div">
-            <div className="analytics-div1">
+            <div className="analytics-div1" data-aos="fade-up" data-aos-duration="1000">
               <h2>Web Analytics.</h2>
               <h2>Actionable, at scale.</h2>
             </div>

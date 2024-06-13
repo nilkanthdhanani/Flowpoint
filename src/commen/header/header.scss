@@ -196,43 +196,66 @@ header {
                 }
             }
         }
-    }
-}
 
-.sidebar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 260px;
-    height: 100%;
-    background-color: white;
-    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
-    z-index: 100;
-    transition: transform 0.3s ease-in-out;
-    transform: translateX(0);
+        .sidebar-backdrop {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--color-black-dull);
+            opacity: 0;
+            visibility: hidden;
+            transition:
+                opacity 0.3s ease,
+                visibility 0.3s ease;
 
-    .sidebar-content {
-        .sidebar-logo {
-            padding: 37px 33px;
-
-            img {
-                max-width: 144px;
+            &.open {
+                opacity: 1;
+                visibility: visible;
             }
         }
 
-        .sidebar-div {
-            padding: 13px 16px;
-            cursor: pointer;
-            @include space-between;
+        .sidebar {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 260px;
+            height: 100%;
+            background-color: var(--color-white);
+            box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+            flex-direction: column;
+            z-index: 11;
+            transition: right 0.3s ease;
 
-            a {
-                @include font14in;
-                color: var(--font-black3);
-                font-weight: 400;
+            &.open {
+                left: 0;
             }
 
-            &:hover {
-                background: #919eab14;
+            .sidebar-content {
+                .sidebar-logo {
+                    padding: 37px 33px;
+
+                    img {
+                        max-width: 144px;
+                    }
+                }
+
+                .sidebar-div {
+                    padding: 13px 16px;
+                    cursor: pointer;
+                    @include space-between;
+
+                    a {
+                        @include font14in;
+                        color: var(--font-black3);
+                        font-weight: 400;
+                    }
+
+                    &:hover {
+                        background: #919eab14;
+                    }
+                }
             }
         }
     }

@@ -105,41 +105,38 @@ export default function Header() {
                   <img src={menuSrc} alt="sidebar" />
                 </div>
               </div>
+            </div><div className={`sidebar-backdrop ${isSidebarOpen ? 'open' : ''}`} onClick={toggleSidebar}></div>
+            <div className={`sidebar ${isSidebarOpen ? 'open' : ''}`}>
+              <div className="sidebar-content">
+                <div className="sidebar-logo">
+                  <img src={blackLogo} alt="blackLogo" />
+                </div>
+                <div className="sidebar-div">
+                  <a href="Features">Features</a>
+                  <img src={sideIcon} alt="sideIcon" />
+                </div>
+                <div className="sidebar-div">
+                  <a href="Resources">Resources</a>
+                  <img src={sideIcon} alt="sideIcon" />
+                </div>
+                <div className="sidebar-div">
+                  <a href="Pricing">Pricing</a>
+                </div>
+                <div className="sidebar-div">
+                  <a href="Case studies">Case Studies</a>
+                  <img src={sideIcon} alt="sideIcon" />
+                </div>
+                <div className="sidebar-div">
+                  <a href="Log in">Log in</a>
+                </div>
+                <div className="sidebar-div-button">
+                  <button>Start Your Free Trial</button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </header>
-
-      {isSidebarOpen && (
-        <div className="sidebar" ref={sidebarRef}>
-          <div className="sidebar-content">
-            <div className="sidebar-logo">
-              <img src={blackLogo} alt="blackLogo" />
-            </div>
-            <div className="sidebar-div">
-              <a href="Features">Features</a>
-              <img src={sideIcon} alt="sideIcon" />
-            </div>
-            <div className="sidebar-div">
-            <a href="Resources">Resources</a>
-              <img src={sideIcon} alt="sideIcon" />
-            </div>
-            <div className="sidebar-div">
-            <a href="Pricing">Pricing</a>
-            </div>
-            <div className="sidebar-div">
-            <a href="Case studies">Case Studies</a>
-              <img src={sideIcon} alt="sideIcon" />
-            </div>
-            <div className="sidebar-div">
-            <a href="Log in">Log in</a>
-            </div>
-            <div className="sidebar-div-button">
-              <button>Start Your Free Trial</button>
-            </div>
-          </div>
-        </div>
-      )}
     </div>
   );
 }

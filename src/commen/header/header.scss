@@ -36,18 +36,18 @@ header {
                 .hmg-flex2 {
                     .hmg-flex2-ancer {
                         .hmg-flex2-list {
-                            color: var(--font-black-header);
+                            color: var(--font-black-header) !important;
 
                             a {
-                                color: var(--font-black-header);
+                                color: var(--font-black-header) !important;
                                 transition: color 0.5s ease;
                             }
 
                             &:hover {
-                                color: var(--color-black-dull);
+                                color: var(--color-black-dull) !important;
                                 transition: color 0.3s ease-in-out;
                                 a {
-                                    color: var(--color-black-dull);
+                                    color: var(--color-black-dull) !important;
                                 }
                             }
                         }

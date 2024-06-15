@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import './home.scss';
 import exploreBG from '../../assets/images/jpg/exploreBG.png';
 import marq1 from '../../assets/images/webp/marq1.webp';
@@ -68,6 +68,57 @@ export default function Home() {
       text: "Easily measure the return on investment and make data-driven decisions that grow your business.",
       img: discoverImg4,
     },
+  };
+
+  const [currentImage, setCurrentImage] = useState(discoverImg1);
+  const sectionRefs = useRef([]);
+
+  useEffect(() => {
+    const options = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.5,
+    };
+
+    const currentSectionRefs = sectionRefs.current;
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const index = currentSectionRefs.indexOf(entry.target);
+          updateImage(index);
+        }
+      });
+    }, options);
+
+    currentSectionRefs.forEach((ref) => {
+      if (ref) observer.observe(ref);
+    });
+
+    return () => {
+      currentSectionRefs.forEach((ref) => {
+        if (ref) observer.unobserve(ref);
+      });
+    };
+  }, []);
+
+  const updateImage = (index) => {
+    switch (index) {
+      case 0:
+        setCurrentImage(discoverImg1);
+        break;
+      case 1:
+        setCurrentImage(discoverImg2);
+        break;
+      case 2:
+        setCurrentImage(discoverImg3);
+        break;
+      case 3:
+        setCurrentImage(discoverImg4);
+        break;
+      default:
+        setCurrentImage(discoverImg1);
+    }
   };
 
   return (
@@ -327,59 +378,34 @@ export default function Home() {
         <div className="containerD">
           <div className="discover-grid">
             <div className="discover-grid-div1">
-              <div className="dgd1-content">
-                <div className="dgd1-content-text">
-                  <div className="dgd1-content-text1">
-                    <img src={discover1} alt="discover1" />
-                    <span>DISCOVER</span>
-                  </div>
-                  <div className="dgd1-content-text2">
-                    <h2>Where do visitors go?</h2>
-                    <p>See a bird's-eye view of your entire website traffic and identify the most common user journeys.</p>
-                  </div>
-                </div>
-              </div>
-              <div className="dgd1-content">
-                <div className="dgd1-content-text">
-                  <div className="dgd1-content-text1">
-                    <img src={discover2} alt="discover2" />
-                    <span>SCALE</span>
-                  </div>
-                  <div className="dgd1-content-text2">
-                    <h2>Identifying issues at scale?</h2>
-                    <p>See a comprehensive overview of your visitors' activities and quickly identify their pain points on a large scale within just a few minutes.</p>
-                  </div>
-                </div>
-              </div>
-              <div className="dgd1-content">
-                <div className="dgd1-content-text">
-                  <div className="dgd1-content-text1">
-                    <img src={discover3} alt="discover3" />
-                    <span>PRIORITISE</span>
-                  </div>
-                  <div className="dgd1-content-text2">
-                    <h2>What issues are impactful?</h2>
-                    <p>Prioritize the most impactful areas for conversion rate optimization to efficiently allocate resources and boost results.</p>
+              {[discover1, discover2, discover3, discover4].map((discover, index) => (
+                <div
+                  className="dgd1-content"
+                  key={index}
+                  ref={(el) => (sectionRefs.current[index] = el)}
+                >
+                  <div className="dgd1-content-text">
+                    <div className="dgd1-content-text1">
+                      <img src={discover} alt={`discover${index + 1}`} />
+                      <span>{["DISCOVER", "SCALE", "PRIORITISE", "MEASURE"][index]}</span>
+                    </div>
+                    <div className="dgd1-content-text2">
+                      <h2>{["Where do visitors go?", "Identifying issues at scale?", "What issues are impactful?", "What is the ROI?"][index]}</h2>
+                      <p>{[
+                        "See a bird's-eye view of your entire website traffic and identify the most common user journeys.",
+                        "See a comprehensive overview of your visitors' activities and quickly identify their pain points on a large scale within just a few minutes.",
+                        "Prioritize the most impactful areas for conversion rate optimization to efficiently allocate resources and boost results.",
+                        "Easily measure the return on investment and make data-driven decisions that grow your business."
+                      ][index]}</p>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div className="dgd1-content">
-                <div className="dgd1-content-text">
-                  <div className="dgd1-content-text1">
-                    <img src={discover4} alt="discover4" />
-                    <span>MEASURE</span>
-                  </div>
-                  <div className="dgd1-content-text2">
-                    <h2>What is the ROI?</h2>
-                    <p>Easily measure the return on investment and make data-driven decisions that grow your business.</p>
-                  </div>
-                </div>
-              </div>
+              ))}
             </div>
             <div className="discover-grid-div2">
               <div className="dgd2-content">
                 <div className="dgd2-content-img">
-                  <img src={discoverImg1} alt="discoverImg1" />
+                  <img src={currentImage} alt="current discover" />
                 </div>
               </div>
             </div>

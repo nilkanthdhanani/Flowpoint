@@ -70,6 +70,7 @@ export default function Home() {
     },
   };
 
+
   const [currentImage, setCurrentImage] = useState(discoverImg1);
   const sectionRefs = useRef([]);
 
@@ -77,7 +78,7 @@ export default function Home() {
     const options = {
       root: null,
       rootMargin: '0px',
-      threshold: 0.5,
+      threshold: 1,
     };
 
     const currentSectionRefs = sectionRefs.current;

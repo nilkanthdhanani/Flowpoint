@@ -10,7 +10,7 @@ import { IoIosArrowDown } from "react-icons/io";
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isScrolled300, setIsScrolled300] = useState(false);
+  const [isScrolled100vh, setIsScrolled100vh] = useState(false);
   const [logoSrc, setLogoSrc] = useState(logo);
   const [menuSrc, setMenuSrc] = useState(menu);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -18,25 +18,21 @@ export default function Header() {
 
   useEffect(() => {
     const handleScroll = () => {
+      const vh = window.innerHeight * 0.8;
+
       if (window.scrollY > 0) {
         setIsScrolled(true);
       } else {
         setIsScrolled(false);
       }
 
-      if (window.scrollY > 500) {
-        setIsScrolled300(true);
+      if (window.scrollY > vh) {
+        setIsScrolled100vh(true);
         setLogoSrc(blackLogo);
-      } else {
-        setIsScrolled300(false);
-        setLogoSrc(logo);
-      }
-
-      if (window.scrollY > 500) {
-        setIsScrolled300(true);
         setMenuSrc(menuBlack);
       } else {
-        setIsScrolled300(false);
+        setIsScrolled100vh(false);
+        setLogoSrc(logo);
         setMenuSrc(menu);
       }
     };
@@ -62,7 +58,7 @@ export default function Header() {
 
   return (
     <div>
-      <header className={`${isScrolled ? 'scrolled' : ''} ${isScrolled300 ? 'scrolled-300' : ''}`}>
+      <header className={`${isScrolled ? 'scrolled' : ''} ${isScrolled100vh ? 'scrolled-100vh' : ''}`}>
         <div className="header-first">
           <span></span>
           <a href="introducing">Introducing the Free Plan →</a>
@@ -105,7 +101,8 @@ export default function Header() {
                   <img src={menuSrc} alt="sidebar" />
                 </div>
               </div>
-            </div><div className={`sidebar-backdrop ${isSidebarOpen ? 'open' : ''}`} onClick={toggleSidebar}></div>
+            </div>
+            <div className={`sidebar-backdrop ${isSidebarOpen ? 'open' : ''}`} onClick={toggleSidebar}></div>
             <div className={`sidebar ${isSidebarOpen ? 'open' : ''}`}>
               <div className="sidebar-content">
                 <div className="sidebar-logo">
